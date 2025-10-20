@@ -17,3 +17,7 @@ def hello_template(request):
         'features': ['Django框架', 'Python语言', 'HTML模板', '20231201034+王迪']
     }
     return render(request, 'hello/hello.html', context)
+
+def singlepage(request):
+    """单页应用视图"""
+    return render(request, 'singlepage.html')
