@@ -1,22 +1,21 @@
-// 显示指定页面，隐藏其他页面
+// Shows one page and hides the other two
 function showPage(page) {
-    // 隐藏所有 div
+    // Hide all of the divs:
     document.querySelectorAll('div').forEach(div => {
         div.style.display = 'none';
     });
-    // 显示指定的 div
+    
+    // Show the div provided in the argument
     document.querySelector(`#${page}`).style.display = 'block';
 }
 
-// 页面加载完成后绑定按钮点击事件
-document.addEventListener('DOMContentLoaded', function () {
-    // 选择所有按钮
+// Wait for page to loaded:
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all buttons
     document.querySelectorAll('button').forEach(button => {
-        // 按钮点击时切换页面
-        button.onclick = function () {
+        // When a button is clicked, switch to that page
+        button.onclick = function() {
             showPage(this.dataset.page);
         }
     });
-    // 初始显示 page1
-    showPage('page1');
 });
